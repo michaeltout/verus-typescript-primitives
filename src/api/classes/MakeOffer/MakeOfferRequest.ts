@@ -1,7 +1,7 @@
 import { ApiRequest } from "../../ApiRequest";
 import { RequestParams, ApiPrimitiveJson } from "../../ApiPrimitive";
 import { MAKE_OFFER } from "../../../constants/cmds";
-import { OfferForMaking } from "../../../offers/OfferForMaking";
+import { OfferForMaking } from "../../types/offers/OfferForMaking";
 
 export class MakeOfferRequest extends ApiRequest {
   fromaddress: string;

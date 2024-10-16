@@ -1,8 +1,8 @@
-import { BlockInfo } from "../block/BlockInfo";
-import { IdentityDefinition } from "../identity/IdentityDefinition";
-import { OfferForMaking } from "../offers/OfferForMaking";
-import { ListedOffer } from "../offers/OfferList";
-import { RawTransaction } from "../transaction/RawTransaction";
+import { BlockInfo } from "./types/block/BlockInfo";
+import { IdentityDefinition } from "./types/identity/IdentityDefinition";
+import { OfferForMaking } from "./types/offers/OfferForMaking";
+import { ListedOffer } from "./types/offers/OfferList";
+import { RawTransaction } from "./types/transaction/RawTransaction";
 
 export type ApiPrimitive =
   | string

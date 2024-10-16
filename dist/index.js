@@ -30,7 +30,6 @@ __exportStar(require("./utils/evals"), exports);
 __exportStar(require("./utils/script"), exports);
 __exportStar(require("./utils/cccustom"), exports);
 __exportStar(require("./pbaas/index"), exports);
-__exportStar(require("./identity/IdentityDefinition"), exports);
-__exportStar(require("./currency/CurrencyDefinition"), exports);
+__exportStar(require("./api/types/index"), exports);
 var bn_js_1 = require("bn.js");
 Object.defineProperty(exports, "BigNumber", { enumerable: true, get: function () { return bn_js_1.BN; } });

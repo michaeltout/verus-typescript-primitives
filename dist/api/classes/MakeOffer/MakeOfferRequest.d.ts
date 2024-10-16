@@ -1,6 +1,6 @@
 import { ApiRequest } from "../../ApiRequest";
 import { RequestParams, ApiPrimitiveJson } from "../../ApiPrimitive";
-import { OfferForMaking } from "../../../offers/OfferForMaking";
+import { OfferForMaking } from "../../types/offers/OfferForMaking";
 export declare class MakeOfferRequest extends ApiRequest {
     fromaddress: string;
     offer: OfferForMaking;

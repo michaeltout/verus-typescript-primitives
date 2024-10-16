@@ -1,4 +1,4 @@
-import { CurrencyDefinition } from "../../../currency/CurrencyDefinition";
+import { CurrencyDefinition } from "../../types/currency/CurrencyDefinition";
 import { ApiResponse } from "../../ApiResponse";
 
 export class ListCurrenciesResponse extends ApiResponse {

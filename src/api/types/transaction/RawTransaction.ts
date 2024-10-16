@@ -1,4 +1,4 @@
-import { ApiPrimitive } from "../api/ApiPrimitive";
+import { ApiPrimitive } from "../../../api/ApiPrimitive";
 
 export interface RawTransaction {
   hex: string;

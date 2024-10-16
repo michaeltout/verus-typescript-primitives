@@ -1,4 +1,4 @@
-import { IdentityDefinition } from "../../../identity/IdentityDefinition";
+import { IdentityDefinition } from "../../types/identity/IdentityDefinition";
 import { ApiResponse } from "../../ApiResponse";
 export declare class GetIdentityResponse extends ApiResponse {
     result: {
