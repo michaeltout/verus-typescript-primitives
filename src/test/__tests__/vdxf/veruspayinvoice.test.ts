@@ -1,8 +1,8 @@
 import { BN } from "bn.js";
-import { VerusPayInvoice, VerusPayInvoiceDetails } from "../../vdxf/classes";
-import { DEST_PKH, TransferDestination } from "../../pbaas/TransferDestination";
-import { fromBase58Check } from "../../utils/address";
-import { VERUSPAY_VERSION_FIRSTVALID, VERUSPAY_VERSION_LASTVALID } from "../../vdxf/classes/payment/VerusPayInvoice";
+import { VerusPayInvoice, VerusPayInvoiceDetails } from "../../../vdxf/classes";
+import { DEST_PKH, TransferDestination } from "../../../pbaas/TransferDestination";
+import { fromBase58Check } from "../../../utils/address";
+import { VERUSPAY_VERSION_FIRSTVALID, VERUSPAY_VERSION_LASTVALID } from "../../../vdxf/classes/payment/VerusPayInvoice";
 
 describe('Serializes and deserializes VerusPay invoice', () => {
   test('basic verus pay invoice with invalid version', async () => {

@@ -1,8 +1,8 @@
 import { BN } from "bn.js";
-import { IdentityID } from "../../../pbaas/IdentityID";
-import { SmartTransactionScript } from "../../../pbaas/transaction/SmartTransactionScript";
-import { OptCCParams } from "../../../pbaas/OptCCParams";
-import { TxDestination } from "../../../pbaas/TxDestination";
+import { IdentityID } from "../../../../pbaas/IdentityID";
+import { SmartTransactionScript } from "../../../../pbaas/transaction/SmartTransactionScript";
+import { OptCCParams } from "../../../../pbaas/OptCCParams";
+import { TxDestination } from "../../../../pbaas/TxDestination";
 
 describe('Serializes and deserializes SmartTransactionScripts', () => {
   test('(de)serialize a basic identity registration outscript (v2) from daemon', () => {

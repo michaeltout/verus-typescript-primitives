@@ -1,4 +1,4 @@
-import { SignedSessionObject, SignedSessionObjectData } from "../../vdxf/classes";
+import { SignedSessionObject, SignedSessionObjectData } from "../../../vdxf/classes";
 
 describe('Serializes and deserializes signed session object properly', () => {
   test('signed session object', async () => {

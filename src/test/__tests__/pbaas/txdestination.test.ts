@@ -1,9 +1,9 @@
-import { IdentityID } from "../../pbaas/IdentityID";
-import { KeyID } from "../../pbaas/KeyID";
-import { NoDestination } from "../../pbaas/NoDestination";
-import { PubKey } from "../../pbaas/PubKey";
-import { TxDestination, TxDestinationVariantInterface } from "../../pbaas/TxDestination";
-import { fromBase58Check, toIAddress } from "../../utils/address";
+import { IdentityID } from "../../../pbaas/IdentityID";
+import { KeyID } from "../../../pbaas/KeyID";
+import { NoDestination } from "../../../pbaas/NoDestination";
+import { PubKey } from "../../../pbaas/PubKey";
+import { TxDestination, TxDestinationVariantInterface } from "../../../pbaas/TxDestination";
+import { fromBase58Check, toIAddress } from "../../../utils/address";
 
 describe('Serializes and deserializes TxDestination variants', () => {
   interface AddressInterface {

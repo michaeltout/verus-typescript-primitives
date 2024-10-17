@@ -1,13 +1,13 @@
 import { BN } from "bn.js";
-import { IdentityID } from "../../pbaas/IdentityID";
-import { Identity } from "../../pbaas/Identity";
-import { OptCCParams } from "../../pbaas/OptCCParams";
-import { TxDestination } from "../../pbaas/TxDestination";
-import { compile, decompile } from "../../utils/script";
-import { OPS } from "../../utils/ops";
-import { EVALS } from "../../utils/evals";
-import { KeyID } from "../../pbaas/KeyID";
-import { toIAddress } from "../../utils/address";
+import { IdentityID } from "../../../pbaas/IdentityID";
+import { Identity } from "../../../pbaas/Identity";
+import { OptCCParams } from "../../../pbaas/OptCCParams";
+import { TxDestination } from "../../../pbaas/TxDestination";
+import { compile, decompile } from "../../../utils/script";
+import { OPS } from "../../../utils/ops";
+import { EVALS } from "../../../utils/evals";
+import { KeyID } from "../../../pbaas/KeyID";
+import { toIAddress } from "../../../utils/address";
 
 describe('Serializes and deserializes TxDestination variants', () => {
   test('(de)serialize a basic OptCCParams class to/from a chunk with a tx destination', () => {

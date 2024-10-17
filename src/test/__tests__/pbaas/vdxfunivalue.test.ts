@@ -1,9 +1,5 @@
-import { BN } from "bn.js";
-import { PRINCIPAL_DEFAULT_FLAGS, PRINCIPAL_VERSION_CURRENT, Principal } from "../../pbaas/Principal";
-import { KeyID } from "../../pbaas/KeyID";
-import { fromBase58Check } from "../../utils/address";
-import { VDXF_UNI_VALUE_VERSION_CURRENT, VdxfUniValue } from "../../pbaas/VdxfUniValue";
-import { DATA_TYPE_STRING, VERUSPAY_INVOICE_VDXF_KEY } from "../../vdxf";
+import { VDXF_UNI_VALUE_VERSION_CURRENT, VdxfUniValue } from "../../../pbaas/VdxfUniValue";
+import { DATA_TYPE_STRING, VERUSPAY_INVOICE_VDXF_KEY } from "../../../vdxf";
 
 describe('Encodes and decodes VdxfUniValue', () => {
   test('encode/decode VdxfUniValue with string data', () => {

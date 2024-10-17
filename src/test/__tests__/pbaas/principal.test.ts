@@ -1,7 +1,7 @@
 import { BN } from "bn.js";
-import { PRINCIPAL_DEFAULT_FLAGS, PRINCIPAL_VERSION_CURRENT, Principal } from "../../pbaas/Principal";
-import { KeyID } from "../../pbaas/KeyID";
-import { fromBase58Check } from "../../utils/address";
+import { PRINCIPAL_DEFAULT_FLAGS, PRINCIPAL_VERSION_CURRENT, Principal } from "../../../pbaas/Principal";
+import { KeyID } from "../../../pbaas/KeyID";
+import { fromBase58Check } from "../../../utils/address";
 
 describe('Serializes and deserializes Principal', () => {
   test('(de)serialize Principal with 2 primary addrs and minsig 1', () => {

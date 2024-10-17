@@ -1,4 +1,4 @@
-import { VerusScript } from "../../../pbaas/transaction/VerusScript";
+import { VerusScript } from "../../../../pbaas/transaction/VerusScript";
 
 describe('Serializes and deserializes VerusScripts', () => {
   test('(de)serialize a basic identity registration outscript (v2) from daemon', () => {

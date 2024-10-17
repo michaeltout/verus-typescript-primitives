@@ -1,11 +1,11 @@
-import { Hash160 } from "../../vdxf/classes/Hash160";
-import { IDENTITY_NAME_COMMITMENT_TXID, IDENTITY_REGISTRATION_TXID, IDENTITY_VIEW, ID_ADDRESS_VDXF_KEY, ID_FULLYQUALIFIEDNAME_VDXF_KEY, ID_PARENT_VDXF_KEY, ID_SYSTEMID_VDXF_KEY, LOGIN_CONSENT_ID_PROVISIONING_WEBHOOK_VDXF_KEY, LOGIN_CONSENT_PROVISIONING_ERROR_KEY_UNKNOWN, LOGIN_CONSENT_PROVISIONING_RESULT_STATE_PENDINGAPPROVAL, LOGIN_CONSENT_REDIRECT_VDXF_KEY } from "../../vdxf";
-import { LoginConsentRequest, LoginConsentResponse } from "../../vdxf/classes";
-import { ProvisioningInfo, RedirectUri, RequestedPermission, Subject } from "../../vdxf/classes/Challenge";
-import { Context } from "../../vdxf/classes/Context";
-import { ProvisioningRequest } from "../../vdxf/classes/provisioning/ProvisioningRequest";
-import { ProvisioningResponse } from "../../vdxf/classes/provisioning/ProvisioningResponse";
-import { ProvisioningResult, ProvisioningTxid } from "../../vdxf/classes/provisioning/ProvisioningResult";
+import { Hash160 } from "../../../vdxf/classes/Hash160";
+import { IDENTITY_NAME_COMMITMENT_TXID, IDENTITY_REGISTRATION_TXID, IDENTITY_VIEW, ID_ADDRESS_VDXF_KEY, ID_FULLYQUALIFIEDNAME_VDXF_KEY, ID_PARENT_VDXF_KEY, ID_SYSTEMID_VDXF_KEY, LOGIN_CONSENT_ID_PROVISIONING_WEBHOOK_VDXF_KEY, LOGIN_CONSENT_PROVISIONING_ERROR_KEY_UNKNOWN, LOGIN_CONSENT_PROVISIONING_RESULT_STATE_PENDINGAPPROVAL, LOGIN_CONSENT_REDIRECT_VDXF_KEY } from "../../../vdxf";
+import { LoginConsentRequest, LoginConsentResponse } from "../../../vdxf/classes";
+import { ProvisioningInfo, RedirectUri, RequestedPermission, Subject } from "../../../vdxf/classes/Challenge";
+import { Context } from "../../../vdxf/classes/Context";
+import { ProvisioningRequest } from "../../../vdxf/classes/provisioning/ProvisioningRequest";
+import { ProvisioningResponse } from "../../../vdxf/classes/provisioning/ProvisioningResponse";
+import { ProvisioningResult, ProvisioningTxid } from "../../../vdxf/classes/provisioning/ProvisioningResult";
 
 describe('Serializes and deserializes signature objects properly', () => {
   test('loginconsentrequest/response', async () => {

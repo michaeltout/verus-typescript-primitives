@@ -1,7 +1,7 @@
-import { Identity, IDENTITY_FLAG_TOKENIZED_CONTROL } from "../../../pbaas/Identity";
-import { OptCCParams } from "../../../pbaas/OptCCParams";
-import { IdentityScript } from "../../../pbaas/transaction/IdentityScript";
-import { IDENTITY_RECOVER_ADDR } from "../../../utils/cccustom";
+import { Identity, IDENTITY_FLAG_TOKENIZED_CONTROL } from "../../../../pbaas/Identity";
+import { OptCCParams } from "../../../../pbaas/OptCCParams";
+import { IdentityScript } from "../../../../pbaas/transaction/IdentityScript";
+import { IDENTITY_RECOVER_ADDR } from "../../../../utils/cccustom";
 
 describe('Serializes and deserializes SmartTransactionScripts', () => {
   test('(de)serialize a basic identity registration outscript (v1) from daemon', () => {

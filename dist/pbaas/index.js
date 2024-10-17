@@ -31,6 +31,7 @@ __exportStar(require("./SaplingPaymentAddress"), exports);
 __exportStar(require("./TxDestination"), exports);
 __exportStar(require("./UnknownID"), exports);
 __exportStar(require("./VdxfUniValue"), exports);
+__exportStar(require("./transaction/Transaction"), exports);
 __exportStar(require("./transaction/VerusScript"), exports);
 __exportStar(require("./transaction/SmartTransactionScript"), exports);
 __exportStar(require("./transaction/IdentityScript"), exports);

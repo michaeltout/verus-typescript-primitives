@@ -1,9 +1,9 @@
 import { BN } from "bn.js";
-import { Context, LoginConsentRequest, ProvisioningInfo, RedirectUri, RequestedPermission, SignedSessionObject, SignedSessionObjectData, Subject, VerusPayInvoice, VerusPayInvoiceDetails } from "../../vdxf/classes";
-import { DEST_PKH, TransferDestination } from "../../pbaas/TransferDestination";
-import { fromBase58Check } from "../../utils/address";
-import { parseVdxfObjectString } from "../../vdxf/parser";
-import { IDENTITY_VIEW, ID_ADDRESS_VDXF_KEY, ID_FULLYQUALIFIEDNAME_VDXF_KEY, ID_PARENT_VDXF_KEY, ID_SYSTEMID_VDXF_KEY, LOGIN_CONSENT_ID_PROVISIONING_WEBHOOK_VDXF_KEY, LOGIN_CONSENT_REDIRECT_VDXF_KEY } from "../../vdxf";
+import { Context, LoginConsentRequest, ProvisioningInfo, RedirectUri, RequestedPermission, SignedSessionObject, SignedSessionObjectData, Subject, VerusPayInvoice, VerusPayInvoiceDetails } from "../../../vdxf/classes";
+import { DEST_PKH, TransferDestination } from "../../../pbaas/TransferDestination";
+import { fromBase58Check } from "../../../utils/address";
+import { parseVdxfObjectString } from "../../../vdxf/parser";
+import { IDENTITY_VIEW, ID_ADDRESS_VDXF_KEY, ID_FULLYQUALIFIEDNAME_VDXF_KEY, ID_PARENT_VDXF_KEY, ID_SYSTEMID_VDXF_KEY, LOGIN_CONSENT_ID_PROVISIONING_WEBHOOK_VDXF_KEY, LOGIN_CONSENT_REDIRECT_VDXF_KEY } from "../../../vdxf";
 
 describe('Parses VDXF objects correctly', () => {
   const details = new VerusPayInvoiceDetails({

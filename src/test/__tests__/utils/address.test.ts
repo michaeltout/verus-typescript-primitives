@@ -1,4 +1,4 @@
-import { nameAndParentAddrToIAddr, toIAddress } from "../../utils/address";
+import { nameAndParentAddrToIAddr, toIAddress } from "../../../utils/address";
 
 describe('Address tests', () => {
   test('toIAddress tests', async () => {

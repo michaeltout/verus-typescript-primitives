@@ -1,7 +1,7 @@
 import { BN } from "bn.js";
-import { CurrencyValueMap } from "../../pbaas/CurrencyValueMap";
-import { TokenOutput, TOKEN_OUTPUT_VERSION_MULTIVALUE } from "../../pbaas/TokenOutput";
-import { BigNumber } from "../../utils/types/BigNumber";
+import { CurrencyValueMap } from "../../../pbaas/CurrencyValueMap";
+import { TokenOutput, TOKEN_OUTPUT_VERSION_MULTIVALUE } from "../../../pbaas/TokenOutput";
+import { BigNumber } from "../../../utils/types/BigNumber";
 
 describe('Serializes and deserializes token output properly', () => {
   test('multivalue version 1', async () => {

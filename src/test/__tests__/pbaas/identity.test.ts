@@ -1,9 +1,9 @@
 import { BN } from "bn.js";
-import { ContentMultiMap } from "../../pbaas/ContentMultiMap";
-import { IDENTITY_FLAG_TOKENIZED_CONTROL, IDENTITY_VERSION_PBAAS, Identity, IDENTITY_FLAG_ACTIVECURRENCY } from "../../pbaas/Identity";
-import { KeyID } from "../../pbaas/KeyID";
-import { IdentityID } from "../../pbaas/IdentityID";
-import { DATA_TYPE_STRING } from "../../vdxf";
+import { ContentMultiMap } from "../../../pbaas/ContentMultiMap";
+import { IDENTITY_FLAG_TOKENIZED_CONTROL, IDENTITY_VERSION_PBAAS, Identity, IDENTITY_FLAG_ACTIVECURRENCY } from "../../../pbaas/Identity";
+import { KeyID } from "../../../pbaas/KeyID";
+import { IdentityID } from "../../../pbaas/IdentityID";
+import { DATA_TYPE_STRING } from "../../../vdxf";
 
 describe('Serializes and deserializes identity properly', () => {
   test('deserialize/serialize VerusID without zaddr, post pbaas, with multimap and contentmap', () => {

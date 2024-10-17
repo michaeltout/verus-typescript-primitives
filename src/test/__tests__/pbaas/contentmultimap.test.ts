@@ -1,6 +1,6 @@
-import { ContentMultiMap, KvContent } from "../../pbaas/ContentMultiMap";
-import { DATA_TYPE_STRING } from "../../vdxf";
-import { VDXF_UNI_VALUE_VERSION_CURRENT, VdxfUniValue } from "../../pbaas/VdxfUniValue";
+import { ContentMultiMap, KvContent } from "../../../pbaas/ContentMultiMap";
+import { DATA_TYPE_STRING } from "../../../vdxf";
+import { VDXF_UNI_VALUE_VERSION_CURRENT, VdxfUniValue } from "../../../pbaas/VdxfUniValue";
 
 describe('Serializes and deserializes ContentMultiMap', () => {
   const vdxfunivaluedata = new Map();

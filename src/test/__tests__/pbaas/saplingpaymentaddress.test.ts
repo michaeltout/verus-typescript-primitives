@@ -1,4 +1,4 @@
-import { SaplingPaymentAddress } from "../../pbaas/SaplingPaymentAddress";
+import { SaplingPaymentAddress } from "../../../pbaas/SaplingPaymentAddress";
 
 describe('(de)serializes SaplingPaymentAddress', () => {
   test('(de)serializes SaplingPaymentAddress from address string', () => {
