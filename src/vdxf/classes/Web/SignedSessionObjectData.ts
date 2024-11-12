@@ -1,4 +1,4 @@
-import { VDXFObject, SIGNED_SESSION_OBJECT_DATA } from "../../";
+import { VDXFObject, SIGNED_SESSION_OBJECT_DATA } from "../..";
 import bufferutils from "../../../utils/bufferutils";
 import varuint from "../../../utils/varuint";
 import { Hash160 } from "../Hash160";

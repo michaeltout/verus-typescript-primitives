@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { VDXFObject } from "../../";
+import { VDXFObject } from "../..";
 export declare class SignedSessionObjectData extends VDXFObject {
     session_id: string;
     timestamp_micro: number;

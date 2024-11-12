@@ -2,7 +2,7 @@ import {
   VDXFObject,
   VerusIDSignature,
   VerusIDSignatureInterface,
-} from "../../";
+} from "../..";
 import { SIGNED_SESSION_OBJECT, IDENTITY_AUTH_SIG_VDXF_KEY } from "../../keys";
 import { Hash160 } from "../Hash160";
 import bufferutils from "../../../utils/bufferutils";

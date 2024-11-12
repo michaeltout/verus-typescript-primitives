@@ -7,8 +7,8 @@ export { DecisionInterface as LoginConsentDecisionInterface } from "./Decision";
 export { RequestInterface as LoginConsentRequestInterface } from "./Request";
 export { ResponseInterface as LoginConsentResponseInterface } from "./Response";
 
-export { SignedSessionObject } from './Web/SignedSessionObject'
-export { SignedSessionObjectData } from './Web/SignedSessionObjectData'
+export { SignedSessionObject } from './web/SignedSessionObject'
+export { SignedSessionObjectData } from './web/SignedSessionObjectData'
 
 export { VerusPayInvoiceDetails } from './payment/VerusPayInvoiceDetails'
 export { VerusPayInvoice } from './payment/VerusPayInvoice'

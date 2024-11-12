@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SignedSessionObject = void 0;
-const __1 = require("../../");
+const __1 = require("../..");
 const keys_1 = require("../../keys");
 const Hash160_1 = require("../Hash160");
 const bufferutils_1 = require("../../../utils/bufferutils");

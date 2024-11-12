@@ -1,5 +1,5 @@
 /// <reference types="node" />
-import { VDXFObject, VerusIDSignature, VerusIDSignatureInterface } from "../../";
+import { VDXFObject, VerusIDSignature, VerusIDSignatureInterface } from "../..";
 import { SignedSessionObjectData } from "./SignedSessionObjectData";
 export interface AuthorizedWebRequestInterface {
     system_id: string;
@@ -18,7 +18,7 @@ export declare class SignedSessionObject extends VDXFObject {
         vdxfkey: string;
         system_id: string;
         signing_id: string;
-        signature: import("../../").VerusIDSignatureJson;
+        signature: import("../..").VerusIDSignatureJson;
         challenge: {
             session_id: string;
             timestamp_micro: number;
