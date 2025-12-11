@@ -8,7 +8,7 @@ import { PartialSignData, PartialSignDataCLIJson, PartialSignDataJson } from '..
 import { BigNumber } from '../../../utils/types/BigNumber';
 import { BN } from 'bn.js';
 import { ContentMultiMapJsonValue, IdentityID, VerusCLIVerusIDJson, VerusCLIVerusIDJsonBase } from '../../../pbaas';
-import { ResponseURI, ResponseURIJson } from '../ResponseURI';
+import { ResponseURI, ResponseURIJson } from '../ResponseUri';
 import { SerializableEntity } from '../../../utils/types/SerializableEntity';
 import { UINT_256_LENGTH } from '../../../constants/pbaas';
 

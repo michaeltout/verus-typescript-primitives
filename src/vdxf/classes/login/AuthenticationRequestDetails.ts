@@ -23,7 +23,7 @@ import varuint from "../../../utils/varuint";
 import { HASH160_BYTE_LENGTH, I_ADDR_VERSION } from '../../../constants/vdxf';
 import { fromBase58Check, toBase58Check } from "../../../utils/address";
 import { CompactAddressObject, CompactAddressObjectJson } from "../CompactAddressObject";
-import { ResponseURI, ResponseURIJson } from "../ResponseURI";
+import { ResponseURI, ResponseURIJson } from "../ResponseUri";
 
 export interface AuthenticationRequestDetailsInterface {
   version?: BigNumber;

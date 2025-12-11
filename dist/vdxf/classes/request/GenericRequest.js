@@ -7,7 +7,7 @@ const SaplingPaymentAddress_1 = require("../../../pbaas/SaplingPaymentAddress");
 const bufferutils_1 = require("../../../utils/bufferutils");
 const base64url_1 = require("base64url");
 const deeplink_1 = require("../../../constants/deeplink");
-const ResponseURI_1 = require("../ResponseURI");
+const ResponseUri_1 = require("../ResponseUri");
 const varuint_1 = require("../../../utils/varuint");
 class GenericRequest extends GenericEnvelope_1.GenericEnvelope {
     constructor(envelope = {
@@ -75,7 +75,7 @@ class GenericRequest extends GenericEnvelope_1.GenericEnvelope {
             this.responseURIs = [];
             const callbackURIsLength = reader.readCompactSize();
             for (let i = 0; i < callbackURIsLength; i++) {
-                const newURI = new ResponseURI_1.ResponseURI();
+                const newURI = new ResponseUri_1.ResponseURI();
                 reader.offset = newURI.fromBuffer(reader.buffer, reader.offset);
                 this.responseURIs.push(newURI);
             }

@@ -1,7 +1,7 @@
 import { SerializableEntity } from "../../../utils/types/SerializableEntity";
 import { GenericEnvelope, GenericEnvelopeInterface, GenericEnvelopeJson } from "../envelope/GenericEnvelope";
 import { SaplingPaymentAddress } from '../../../pbaas/SaplingPaymentAddress';
-import { ResponseURI, ResponseURIJson } from '../ResponseURI';
+import { ResponseURI, ResponseURIJson } from '../ResponseUri';
 export type GenericRequestJson = GenericEnvelopeJson & {
     responseuris?: Array<ResponseURIJson>;
     encryptresponsetoaddress?: string;

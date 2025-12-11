@@ -1,7 +1,7 @@
 import { IdentityUpdateRequestDetails } from "../../vdxf/classes/identity/IdentityUpdateRequestDetails";
 import { IdentityUpdateResponseDetails } from "../../vdxf/classes/identity/IdentityUpdateResponseDetails";
 import { ContentMultiMap } from "../../pbaas";
-import { ResponseURI } from "../../vdxf/classes/ResponseURI";
+import { ResponseURI } from "../../vdxf/classes/ResponseUri";
 import { PartialSignData } from "../../pbaas/PartialSignData";
 import { 
   TEST_BASE_SIGN_DATA_WITH_MMR_DATA, 

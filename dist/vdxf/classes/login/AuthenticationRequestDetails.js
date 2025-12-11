@@ -22,7 +22,7 @@ const varuint_1 = require("../../../utils/varuint");
 const vdxf_1 = require("../../../constants/vdxf");
 const address_1 = require("../../../utils/address");
 const CompactAddressObject_1 = require("../CompactAddressObject");
-const ResponseURI_1 = require("../ResponseURI");
+const ResponseUri_1 = require("../ResponseUri");
 class AuthenticationRequestDetails {
     constructor(request) {
         this.version = (request === null || request === void 0 ? void 0 : request.version) || AuthenticationRequestDetails.DEFAULT_VERSION;
@@ -120,7 +120,7 @@ class AuthenticationRequestDetails {
             this.responseURIs = [];
             const callbackURIsLength = reader.readCompactSize();
             for (let i = 0; i < callbackURIsLength; i++) {
-                const newURI = new ResponseURI_1.ResponseURI();
+                const newURI = new ResponseUri_1.ResponseURI();
                 reader.offset = newURI.fromBuffer(reader.buffer, reader.offset);
                 this.responseURIs.push(newURI);
             }
@@ -153,7 +153,7 @@ class AuthenticationRequestDetails {
                 identity: CompactAddressObject_1.CompactAddressObject.fromJson(p.identity) }));
         }
         if (loginDetails.hasResponseURIs() && data.responseURIs) {
-            loginDetails.responseURIs = data.responseURIs.map(c => ResponseURI_1.ResponseURI.fromJson(c));
+            loginDetails.responseURIs = data.responseURIs.map(c => ResponseUri_1.ResponseURI.fromJson(c));
         }
         if (loginDetails.hasExpiryTime() && data.expirytime) {
             loginDetails.expiryTime = new bn_js_1.BN(data.expirytime);

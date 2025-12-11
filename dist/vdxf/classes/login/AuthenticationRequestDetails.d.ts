@@ -16,7 +16,7 @@
 import { BigNumber } from "../../../utils/types/BigNumber";
 import { SerializableEntity } from "../../../utils/types/SerializableEntity";
 import { CompactAddressObject, CompactAddressObjectJson } from "../CompactAddressObject";
-import { ResponseURI, ResponseURIJson } from "../ResponseURI";
+import { ResponseURI, ResponseURIJson } from "../ResponseUri";
 export interface AuthenticationRequestDetailsInterface {
     version?: BigNumber;
     flags?: BigNumber;

@@ -5,7 +5,7 @@ import { SaplingPaymentAddress } from '../../../pbaas/SaplingPaymentAddress';
 import bufferutils from '../../../utils/bufferutils';
 import base64url from 'base64url';
 import { DEEPLINK_PROTOCOL_URL_CURRENT_VERSION, DEEPLINK_PROTOCOL_URL_STRING } from '../../../constants/deeplink';
-import { ResponseURI, ResponseURIJson } from '../ResponseURI';
+import { ResponseURI, ResponseURIJson } from '../ResponseUri';
 import varuint from '../../../utils/varuint';
 
 export type GenericRequestJson = GenericEnvelopeJson & {
