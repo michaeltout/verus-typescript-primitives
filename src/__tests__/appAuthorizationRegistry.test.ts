@@ -1,0 +1,147 @@
+import { BN } from "bn.js";
+import {
+  APP_AUTHORIZATION_REQUEST_VDXF_KEY,
+  APP_AUTHORIZATION_RESPONSE_VDXF_KEY,
+  IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION,
+  IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION_STORAGE_BINDING,
+  IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION_STORAGE_KEY,
+  AppAuthorizationRequestDetails,
+  AppAuthorizationResponseDetails,
+  AppAuthorizationRequestOrdinalVDXFObject,
+  AppAuthorizationResponseOrdinalVDXFObject,
+  AuthorizationCredential,
+  AuthorizationStorageBindingCredential,
+  AuthorizationStorageKeyCredential,
+  GenericRequest,
+  GenericResponse,
+  OrdinalVDXFObject,
+  getDataKey,
+  fromBase58Check,
+  registerOrdinals,
+} from "../index";
+
+const keys = [
+  APP_AUTHORIZATION_REQUEST_VDXF_KEY,
+  APP_AUTHORIZATION_RESPONSE_VDXF_KEY,
+  IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION,
+  IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION_STORAGE_BINDING,
+  IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION_STORAGE_KEY,
+];
+const identity = APP_AUTHORIZATION_REQUEST_VDXF_KEY.vdxfid;
+
+beforeAll(() => registerOrdinals());
+
+test("catalog keys match their qualified names and RPC hash byte order", () => {
+  expect(new Set(keys.map((key) => key.vdxfid)).size).toBe(keys.length);
+  for (const key of keys) {
+    expect(getDataKey(key.qualifiedname.name)).toEqual({
+      id: key.vdxfid,
+      namespace: key.qualifiedname.namespace,
+    });
+    expect(fromBase58Check(key.vdxfid).hash.reverse().toString("hex")).toBe(
+      key.hash160result
+    );
+  }
+});
+
+test("registered request and response ordinals round trip through envelopes", () => {
+  const request = new AppAuthorizationRequestOrdinalVDXFObject({
+    data: new AppAuthorizationRequestDetails(),
+  });
+  const response = new AppAuthorizationResponseOrdinalVDXFObject({
+    data: new AppAuthorizationResponseDetails({
+      outcome: 1,
+      requestSigningSystemID: identity,
+      delegateID: identity,
+    }),
+  });
+
+  for (const value of [request, response]) {
+    const bytes = value.toBuffer();
+    const decoded = OrdinalVDXFObject.createFromBuffer(bytes);
+    expect(decoded.offset).toBe(bytes.length);
+    expect(decoded.obj.toBuffer()).toEqual(bytes);
+    expect(decoded.obj.constructor).toBe(value.constructor);
+  }
+
+  expect(
+    AppAuthorizationRequestOrdinalVDXFObject.fromJson(
+      request.toJson() as any
+    ).toBuffer()
+  ).toEqual(request.toBuffer());
+  expect(
+    AppAuthorizationResponseOrdinalVDXFObject.fromJson(
+      response.toJson() as any
+    ).toBuffer()
+  ).toEqual(response.toBuffer());
+
+  const envelope = new GenericRequest({
+    details: [request],
+    flags: GenericRequest.BASE_FLAGS,
+  });
+  expect(GenericRequest.fromQrString(envelope.toQrString()).toBuffer()).toEqual(
+    envelope.toBuffer()
+  );
+  expect(
+    GenericRequest.fromWalletDeeplinkUri(
+      envelope.toWalletDeeplinkUri()
+    ).toBuffer()
+  ).toEqual(envelope.toBuffer());
+  const reply = new GenericResponse({
+    details: [response],
+    flags: GenericResponse.BASE_FLAGS,
+  });
+  const decodedReply = new GenericResponse();
+  decodedReply.fromBuffer(reply.toBuffer());
+  expect(decodedReply.toBuffer()).toEqual(reply.toBuffer());
+});
+
+test("typed credential codecs use their distinct registered keys by default", () => {
+  const grant = new AuthorizationCredential({
+    version: new BN(1),
+    flags: new BN(0),
+    grantID: "aa".repeat(32),
+    signingSystemID: identity,
+    appID: identity,
+    delegateID: identity,
+    originalRevision: { lookupHeight: 1, txid: "bb".repeat(32), vout: 0 },
+  });
+  const binding = new AuthorizationStorageBindingCredential({
+    version: new BN(1),
+    grantID: "aa".repeat(32),
+    relationshipIndex: 0,
+    storageSystemID: identity,
+    storageID: identity,
+    userKeyID: "bb".repeat(20),
+    revocationID: identity,
+    recoveryID: identity,
+    keyCount: 1,
+  });
+  const key = new AuthorizationStorageKeyCredential({
+    version: new BN(1),
+    grantID: "aa".repeat(32),
+    relationshipIndex: 0,
+    keyIndex: 0,
+    keyID: "cc".repeat(20),
+  });
+
+  expect(grant.toCredential().credentialKey).toBe(keys[2].vdxfid);
+  expect(binding.toCredential().credentialKey).toBe(keys[3].vdxfid);
+  expect(key.toCredential().credentialKey).toBe(keys[4].vdxfid);
+  expect(
+    AuthorizationCredential.fromCredential(grant.toCredential()).toPayload()
+  ).toEqual(grant.toPayload());
+  expect(
+    AuthorizationStorageBindingCredential.fromCredential(
+      binding.toCredential()
+    ).toPayload()
+  ).toEqual(binding.toPayload());
+  expect(
+    AuthorizationStorageKeyCredential.fromCredential(
+      key.toCredential()
+    ).toPayload()
+  ).toEqual(key.toPayload());
+  expect(() =>
+    AuthorizationStorageKeyCredential.fromCredential(binding.toCredential())
+  ).toThrow();
+});
