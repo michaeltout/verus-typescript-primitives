@@ -5,6 +5,7 @@ import {
   IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION,
   IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION_STORAGE_BINDING,
   IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION_STORAGE_KEY,
+  DELEGATOR_PROFILE_VDXF_KEY,
   AppAuthorizationRequestDetails,
   AppAuthorizationResponseDetails,
   AppAuthorizationRequestOrdinalVDXFObject,
@@ -17,6 +18,7 @@ import {
   OrdinalVDXFObject,
   getDataKey,
   fromBase58Check,
+  keymap,
   registerOrdinals,
 } from "../index";
 
@@ -26,10 +28,27 @@ const keys = [
   IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION,
   IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION_STORAGE_BINDING,
   IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION_STORAGE_KEY,
+  DELEGATOR_PROFILE_VDXF_KEY,
 ];
 const identity = APP_AUTHORIZATION_REQUEST_VDXF_KEY.vdxfid;
 
 beforeAll(() => registerOrdinals());
+
+test("delegator profile reservation retains its permanent outer key", () => {
+  expect(DELEGATOR_PROFILE_VDXF_KEY.qualifiedname.name).toBe(
+    "vrsc::identity.profile.delegator"
+  );
+  expect(DELEGATOR_PROFILE_VDXF_KEY.vdxfid).toBe(
+    "iEt9qLvLckny1TVJz9ECTqXmktXKKM2sg9"
+  );
+  expect(keymap[DELEGATOR_PROFILE_VDXF_KEY.vdxfid]).toBe(
+    DELEGATOR_PROFILE_VDXF_KEY
+  );
+  expect(fromBase58Check(DELEGATOR_PROFILE_VDXF_KEY.indexid)).toEqual({
+    version: 137,
+    hash: fromBase58Check(DELEGATOR_PROFILE_VDXF_KEY.vdxfid).hash,
+  });
+});
 
 test("catalog keys match their qualified names and RPC hash byte order", () => {
   expect(new Set(keys.map((key) => key.vdxfid)).size).toBe(keys.length);

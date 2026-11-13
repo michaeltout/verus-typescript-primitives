@@ -98,3 +98,8 @@ export declare const APP_AUTHORIZATION_RESPONSE_VDXF_KEY: VDXFKeyInterface;
 export declare const IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION: VDXFKeyInterface;
 export declare const IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION_STORAGE_BINDING: VDXFKeyInterface;
 export declare const IDENTITY_CREDENTIAL_APPLICATION_AUTHORIZATION_STORAGE_KEY: VDXFKeyInterface;
+/**
+ * Permanent outer CMM key for a delegator's profile, across payload versions.
+ * V1 authorization rejects its presence without decoding the stored values.
+ */
+export declare const DELEGATOR_PROFILE_VDXF_KEY: VDXFKeyInterface;

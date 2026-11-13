@@ -64,3 +64,4 @@ __exportStar(require("./SaplingExtendedSpendingKey"), exports);
 __exportStar(require("./SaplingExtendedViewingKey"), exports);
 __exportStar(require("./AppAuthorizationGrant"), exports);
 __exportStar(require("./AuthorizationCredential"), exports);
+__exportStar(require("./DelegatorProfileSupport"), exports);
